@@ -8,7 +8,8 @@ RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl zip unzip
 RUN docker-php-ext-install pdo pdo_mysql
 
 RUN pecl install mcrypt \
-    && pecl install redis
+    && pecl install redis \
+    && pecl install excimer
 RUN docker-php-ext-enable mcrypt redis
 RUN a2enmod rewrite
 
