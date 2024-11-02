@@ -7,8 +7,9 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl zip unzip
 RUN docker-php-ext-install pdo pdo_mysql
 
-RUN pecl install mcrypt
-RUN docker-php-ext-enable mcrypt
+RUN pecl install mcrypt \
+    && pecl install redis
+RUN docker-php-ext-enable mcrypt redis
 RUN a2enmod rewrite
 
 WORKDIR /var/www/html
