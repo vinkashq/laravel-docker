@@ -20,6 +20,7 @@ RUN apt-get update -y && apt-get install -y cron supervisor
 
 RUN runuser -u www-data -- echo "* * * * * /usr/local/bin/php /var/www/html/artisan schedule:run >> /var/www/html/cron.output" | runuser -u www-data -- crontab -
 
+COPY php/ /usr/local/etc/php/conf.d/
 COPY supervisor/ /etc/supervisor/conf.d/
 
 CMD ["/usr/bin/supervisord"]
