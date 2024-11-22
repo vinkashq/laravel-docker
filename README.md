@@ -4,7 +4,7 @@
 
 | php:apache | |
 | - | - |
-| latest | [![Docker](https://github.com/vinkashq/laravel-docker/actions/workflows/docker-hub-build.yml/badge.svg)](https://github.com/vinkashq/laravel-docker/actions/workflows/docker-hub-build.yml) |
-| 8.3 | [![Docker](https://github.com/vinkashq/laravel-docker/actions/workflows/docker-hub-build.yml/badge.svg?branch=php-8.3)](https://github.com/vinkashq/laravel-docker/actions/workflows/docker-hub-build.yml) |
+| latest | [![Docker](https://github.com/vinkashq/laravel-docker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/vinkashq/laravel-docker/actions/workflows/docker-hub-build.yml) |
+| 8.3 | [![Docker](https://github.com/vinkashq/laravel-docker/actions/workflows/docker-build.yml/badge.svg?branch=php-8.3)](https://github.com/vinkashq/laravel-docker/actions/workflows/docker-hub-build.yml) |
 
 Laravel docker image we use in Google Cloud's Kubernete deployments.

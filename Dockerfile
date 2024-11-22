@@ -14,6 +14,8 @@ RUN pecl install mcrypt \
 RUN docker-php-ext-enable mcrypt redis
 RUN a2enmod rewrite
 
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
 WORKDIR /var/www/html
 
 RUN apt-get update -y && apt-get install -y cron supervisor
