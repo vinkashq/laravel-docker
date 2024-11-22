@@ -42,4 +42,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: vinkas/laravel:latest
+          tags: vinkas/laravel:${{ github.ref_name }}
