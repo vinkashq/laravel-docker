@@ -7,6 +7,7 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl zip unzip
 RUN docker-php-ext-install pdo pdo_mysql
 
+# mcrypt requires < php 8.4
 RUN pecl install mcrypt \
     && pecl install redis \
     && pecl install excimer
