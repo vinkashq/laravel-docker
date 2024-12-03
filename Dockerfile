@@ -16,9 +16,7 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-RUN apt-get update -y && apt-get install -y cron supervisor
-
-RUN runuser -u www-data -- echo "* * * * * /usr/local/bin/php /var/www/html/artisan schedule:run >> /var/www/html/cron.output" | runuser -u www-data -- crontab -
+RUN apt-get update -y && apt-get install -y supervisor
 
 COPY php/ /usr/local/etc/php/conf.d/
 COPY supervisor/ /etc/supervisor/conf.d/
