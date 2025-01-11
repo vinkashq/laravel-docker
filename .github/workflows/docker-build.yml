@@ -52,14 +52,6 @@ jobs:
           push: true
           tags: vinkas/laravel:horizon
 
-      - name: Build and push grpc image
-        uses: docker/build-push-action@v6
-        if: ${{ github.ref_name == 'latest' }}
-        with:
-          file: ./grpc.Dockerfile
-          push: true
-          tags: vinkas/laravel:grpc
-
       - name: Build and push singfuse image
         uses: docker/build-push-action@v6
         if: ${{ github.ref_name == 'latest' }}
